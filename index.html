@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beauté Lash Studio</title>
+  <title>Lash Beauty Studio</title>
   <style>
     * {
       margin: 0;
@@ -13,156 +13,253 @@
     }
 
     body {
-      background: linear-gradient(to bottom, #fff7fb, #ffeef6);
-      color: #4b2e39;
+      background: #fff8fc;
+      color: #4d2c39;
       line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #f7b2d9, #fcd6e6);
-      text-align: center;
-      padding: 70px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    header h1 {
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(255, 240, 247, 0.55), rgba(255, 240, 247, 0.75)),
+        url('images/hero-cils.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-box {
+      background: rgba(255, 255, 255, 0.78);
+      padding: 40px;
+      border-radius: 28px;
+      max-width: 760px;
+      box-shadow: 0 10px 30px rgba(199, 91, 138, 0.18);
+    }
+
+    .hero-box h1 {
       font-size: 3rem;
-      color: #7a2954;
+      color: #9e3d69;
       margin-bottom: 15px;
     }
 
-    header p {
+    .hero-box p {
       font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 25px;
+      margin-bottom: 25px;
     }
 
     .btn {
       display: inline-block;
-      background: #d94f8a;
+      background: #d65b92;
       color: white;
       text-decoration: none;
       padding: 14px 28px;
-      border-radius: 30px;
+      border-radius: 999px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     .btn:hover {
-      background: #b93c72;
+      background: #bb4278;
       transform: translateY(-2px);
     }
 
     nav {
-      background: #fff;
-      padding: 15px;
-      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      padding: 16px 10px;
     }
 
     nav a {
-      margin: 0 15px;
       text-decoration: none;
-      color: #7a2954;
+      color: #9e3d69;
+      margin: 0 14px;
       font-weight: bold;
     }
 
     section {
-      padding: 70px 20px;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
+      padding: 80px 20px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #c2457b;
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+      color: #c04b82;
     }
 
-    .about {
+    .section-text {
       text-align: center;
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 auto 45px;
+      color: #6e4a57;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-image img {
+      border-radius: 24px;
+      height: 420px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-card {
+      background: white;
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px rgba(214, 91, 146, 0.12);
+    }
+
+    .about-card h3 {
+      color: #a54272;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
     }
 
     .card {
       background: white;
-      border-radius: 20px;
-      padding: 25px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(214, 91, 146, 0.12);
+    }
+
+    .card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
       text-align: center;
-      box-shadow: 0 6px 18px rgba(217, 79, 138, 0.12);
-      transition: 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: #a8366b;
+    .card-content h3 {
+      color: #a54272;
       margin-bottom: 10px;
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .price-box {
+      background: white;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 22px rgba(214, 91, 146, 0.12);
+      text-align: center;
+    }
+
+    .price-box h3 {
+      color: #a54272;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 2rem;
+      color: #d65b92;
+      font-weight: bold;
+      margin-bottom: 12px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      height: 280px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
-    .gallery-item {
-      background: #ffd9ea;
-      height: 220px;
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8f3d63;
-      font-weight: bold;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    .review {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 22px rgba(214, 91, 146, 0.12);
+    }
+
+    .review strong {
+      color: #a54272;
+      display: block;
+      margin-top: 12px;
     }
 
     .contact-box {
-      background: white;
-      padding: 35px;
-      border-radius: 20px;
+      background: linear-gradient(135deg, #ffd9ea, #fff0f7);
+      border-radius: 28px;
+      padding: 40px;
       text-align: center;
-      box-shadow: 0 6px 18px rgba(217, 79, 138, 0.12);
-      max-width: 700px;
-      margin: auto;
+      box-shadow: 0 8px 22px rgba(214, 91, 146, 0.14);
     }
 
     .contact-box p {
-      margin: 12px 0;
+      margin: 10px 0;
       font-size: 1.05rem;
     }
 
     footer {
-      background: #7a2954;
+      background: #8e355f;
       color: white;
       text-align: center;
-      padding: 25px 15px;
-      margin-top: 40px;
+      padding: 22px;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
+      .hero-box h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
       nav a {
         display: inline-block;
-        margin: 8px 10px;
+        margin: 8px;
+      }
+
+      .hero-box {
+        padding: 28px 20px;
       }
     }
   </style>
@@ -170,56 +267,133 @@
 <body>
 
   <header>
-    <h1>Beauté Lash Studio</h1>
-    <p>Extensions de cils, rehaussement, beauté du regard et soins féminins dans une ambiance douce, élégante et girly.</p>
-    <a href="#contact" class="btn">Prendre rendez-vous</a>
+    <div class="hero-box">
+      <h1>Lash Beauty Studio</h1>
+      <p>Extensions de cils, rehaussement et beauté du regard dans un univers doux, féminin et élégant.</p>
+      <a href="#contact" class="btn">Prendre rendez-vous</a>
+    </div>
   </header>
 
   <nav>
     <a href="#about">À propos</a>
     <a href="#services">Prestations</a>
+    <a href="#prices">Tarifs</a>
     <a href="#gallery">Galerie</a>
+    <a href="#reviews">Avis</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2 class="section-title">À propos</h2>
-    <p class="about">
-      Bienvenue chez <strong>Beauté Lash Studio</strong>, un espace dédié à la mise en valeur du regard.
-      Votre belle-mère propose des prestations personnalisées pour sublimer chaque cliente avec douceur,
-      professionnalisme et féminité. Un univers chic, rose et raffiné pour se sentir belle et confiante.
-    </p>
+    <p class="section-text">Un espace beauté pensé pour sublimer le regard avec délicatesse, style et professionnalisme.</p>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://media.istockphoto.com/id/1486374304/fr/photo/soins-de-beaut%C3%A9-des-sourcils-et-des-cils-dans-un-salon-de-beaut%C3%A9.webp?a=1&b=1&s=612x612&w=0&k=20&c=bxmSBIC-YEjrUbVdwdw5QyrUWY_VEIjh5w9UKRJHsWg=" alt="Soins de beauté des sourcils et des cils">
+      </div>
+      <div class="about-card">
+        <h3>Un regard sublimé</h3>
+        <p>
+          Bienvenue chez <strong>Lash Beauty Studio</strong>, un salon dédié à la beauté du regard.
+          Nous proposons des prestations soignées et personnalisées pour mettre en valeur chaque cliente.
+        </p>
+        <br />
+        <p>
+          Dans une ambiance chic et girly, chaque rendez-vous est un moment de détente, de douceur et de confiance.
+        </p>
+      </div>
+    </div>
   </section>
 
   <section id="services">
     <h2 class="section-title">Nos prestations</h2>
+    <p class="section-text">Des prestations modernes pour un résultat naturel, glamour ou intense selon vos envies.</p>
     <div class="services">
       <div class="card">
-        <h3>Extensions de cils</h3>
-        <p>Pose naturelle, volume russe ou effet glamour selon vos envies.</p>
+       <img src="https://media.istockphoto.com/id/595342004/fr/photo/proc%C3%A9dure-dextension-des-cils-%C5%93il-de-femme-avec-de-longs-cils-cils.webp?s=1024x1024&w=is&k=20&c=JxszwkztBJCLBnPrLt9k8zE4RdXNsj0Q5gqQyJNIZXY=" alt="Extension de cils gros plan">
+        <div class="card-content">
+          <h3>Pose cil à cil</h3>
+          <p>Un effet naturel et élégant, parfait pour sublimer le regard au quotidien.</p>
+        </div>
       </div>
       <div class="card">
+      <img src="https://media.istockphoto.com/id/1864523711/fr/photo/un-cosm%C3%A9tologue-peigne-les-cils-dun-client-apr%C3%A8s-une-proc%C3%A9dure-dextension-de-cils.webp?s=1024x1024&w=is&k=20&c=kVr9SnoiEU6nwvA3U05h_dsCceJADKS9sVHiuHc47ZQ=" alt="Extension de cils en salon">
+        <div class="card-content">
+          <h3>Volume russe</h3>
+          <p>Un regard intense, fourni et glamour pour un rendu sophistiqué.</p>
+        </div>
+      </div>
+      <div class="card">
+      <img src="https://images.unsplash.com/photo-1730226995154-efe9e13db300?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNpbHxlbnwwfHwwfHx8MA%3D%3D" alt="Extensions de cils">
+        <div class="card-content">
+          <h3>Rehaussement</h3>
+          <p>Une jolie courbure naturelle pour ouvrir le regard sans extensions.</p>
+        </div>
+      </div>
+      <div class="card">
+       <img src="https://plus.unsplash.com/premium_photo-1661501523837-083813c782d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2lsfGVufDB8fDB8fHww" alt="Extensions de cils">
+        <div class="card-content">
+          <h3>Remplissage</h3>
+          <p>Un entretien régulier pour garder des cils toujours impeccables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <h2 class="section-title">Tarifs</h2>
+    <p class="section-text"></p>
+    <div class="prices">
+      <div class="price-box">
+        <h3>Pose cil à cil</h3>
+        <div class="price">45€</div>
+        <p>Effet naturel et discret.</p>
+      </div>
+      <div class="price-box">
+        <h3>Volume russe</h3>
+        <div class="price">60€</div>
+        <p>Effet intense et glamour.</p>
+      </div>
+      <div class="price-box">
+        <h3>Rehaussement</h3>
+        <div class="price">35€</div>
+        <p>Courbure naturelle des cils.</p>
+      </div>
+      <div class="price-box">
         <h3>Remplissage</h3>
-        <p>Entretien de vos extensions pour garder un regard parfait plus longtemps.</p>
-      </div>
-      <div class="card">
-        <h3>Rehaussement de cils</h3>
-        <p>Une courbure élégante et naturelle pour ouvrir le regard.</p>
-      </div>
-      <div class="card">
-        <h3>Beauté du regard</h3>
-        <p>Conseils et soins pour mettre en valeur vos cils et sourcils.</p>
+        <div class="price">30€</div>
+        <p>Entretien après la pose.</p>
       </div>
     </div>
   </section>
 
   <section id="gallery">
     <h2 class="section-title">Galerie</h2>
+    <p class="section-text"></p>
     <div class="gallery">
-      <div class="gallery-item">Photo résultat 1</div>
-      <div class="gallery-item">Photo résultat 2</div>
-      <div class="gallery-item">Photo résultat 3</div>
-      <div class="gallery-item">Photo résultat 4</div>
+    <img src="https://plus.unsplash.com/premium_photo-1661501523837-083813c782d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2lsfGVufDB8fDB8fHww" alt="Extensions de cils">
+     <img src="https://images.unsplash.com/photo-1730226995154-efe9e13db300?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNpbHxlbnwwfHwwfHx8MA%3D%3D" alt="Extensions de cils">
+     <img src="https://media.istockphoto.com/id/1864523711/fr/photo/un-cosm%C3%A9tologue-peigne-les-cils-dun-client-apr%C3%A8s-une-proc%C3%A9dure-dextension-de-cils.webp?s=1024x1024&w=is&k=20&c=kVr9SnoiEU6nwvA3U05h_dsCceJADKS9sVHiuHc47ZQ=" alt="Extension de cils en salon">
+     <img src="https://media.istockphoto.com/id/595342004/fr/photo/proc%C3%A9dure-dextension-des-cils-%C5%93il-de-femme-avec-de-longs-cils-cils.webp?s=1024x1024&w=is&k=20&c=JxszwkztBJCLBnPrLt9k8zE4RdXNsj0Q5gqQyJNIZXY=" alt="Extension de cils gros plan">
+     <img src="https://media.istockphoto.com/id/2165024255/fr/photo/%C5%93il-ouvert-dune-femme-avec-des-extensions-de-cils.webp?a=1&b=1&s=612x612&w=0&k=20&c=fyaxifOYkaMDjhde-wEv2a_jxoSqTMH9LDvOSCVaPx4=" alt="Œil avec extensions de cils">
+     <img src="https://images.unsplash.com/photo-1721540343335-142d9a064d94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fHJlc3VsdGF0JTIwY2lscyUyMGV4dGVuc2lvbnN8ZW58MHx8MHx8fDA%3D" alt="Résultat extensions de cils">
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2 class="section-title">Avis clientes</h2> 
+    <div class="reviews">
+      <div class="review">
+        <p>"Résultat magnifique, très professionnel et super accueil. Je recommande à 100%."</p>
+        <strong>— Sarah</strong>
+      </div>
+      <div class="review">
+        <p>"Mes cils sont sublimes, l'effet est exactement comme je voulais. Très douce et appliquée."</p>
+        <strong>— Inès</strong>
+      </div>
+      <div class="review">
+        <p>"Salon très propre, ambiance agréable et travail de qualité. Je reviendrai sans hésiter."</p>
+        <strong>— Lina</strong>
+      </div>
     </div>
   </section>
 
@@ -227,16 +401,16 @@
     <h2 class="section-title">Contact</h2>
     <div class="contact-box">
       <p><strong>Téléphone :</strong> 06 00 00 00 00</p>
-      <p><strong>Instagram :</strong> @beaute.lash.studio</p>
-      <p><strong>Adresse :</strong> Votre ville / votre adresse</p>
+      <p><strong>Instagram :</strong> @lashbeautystudio</p>
+      <p><strong>Adresse :</strong> Paris</p>
       <p><strong>Horaires :</strong> Lundi au Samedi - 9h00 à 18h00</p>
-      <br>
-      <a href="mailto:contact@beaute-lash-studio.com" class="btn">Envoyer un message</a>
+      <br />
+      <a class="btn" href="mailto:contact@lashbeautystudio.com">Réserver maintenant</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Beauté Lash Studio - Tous droits réservés</p>
+    <p>© 2026 Lash Beauty Studio - Tous droits réservés</p>
   </footer>
 
 </body>
