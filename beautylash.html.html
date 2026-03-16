@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauté Lash Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #fff7fb, #ffeef6);
+      color: #4b2e39;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f7b2d9, #fcd6e6);
+      text-align: center;
+      padding: 70px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #7a2954;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d94f8a;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b93c72;
+      transform: translateY(-2px);
+    }
+
+    nav {
+      background: #fff;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #7a2954;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #c2457b;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.05rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(217, 79, 138, 0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #a8366b;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background: #ffd9ea;
+      height: 220px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8f3d63;
+      font-weight: bold;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+
+    .contact-box {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(217, 79, 138, 0.12);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-box p {
+      margin: 12px 0;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      background: #7a2954;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Beauté Lash Studio</h1>
+    <p>Extensions de cils, rehaussement, beauté du regard et soins féminins dans une ambiance douce, élégante et girly.</p>
+    <a href="#contact" class="btn">Prendre rendez-vous</a>
+  </header>
+
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#services">Prestations</a>
+    <a href="#gallery">Galerie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">À propos</h2>
+    <p class="about">
+      Bienvenue chez <strong>Beauté Lash Studio</strong>, un espace dédié à la mise en valeur du regard.
+      Votre belle-mère propose des prestations personnalisées pour sublimer chaque cliente avec douceur,
+      professionnalisme et féminité. Un univers chic, rose et raffiné pour se sentir belle et confiante.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Nos prestations</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Extensions de cils</h3>
+        <p>Pose naturelle, volume russe ou effet glamour selon vos envies.</p>
+      </div>
+      <div class="card">
+        <h3>Remplissage</h3>
+        <p>Entretien de vos extensions pour garder un regard parfait plus longtemps.</p>
+      </div>
+      <div class="card">
+        <h3>Rehaussement de cils</h3>
+        <p>Une courbure élégante et naturelle pour ouvrir le regard.</p>
+      </div>
+      <div class="card">
+        <h3>Beauté du regard</h3>
+        <p>Conseils et soins pour mettre en valeur vos cils et sourcils.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title">Galerie</h2>
+    <div class="gallery">
+      <div class="gallery-item">Photo résultat 1</div>
+      <div class="gallery-item">Photo résultat 2</div>
+      <div class="gallery-item">Photo résultat 3</div>
+      <div class="gallery-item">Photo résultat 4</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-box">
+      <p><strong>Téléphone :</strong> 06 00 00 00 00</p>
+      <p><strong>Instagram :</strong> @beaute.lash.studio</p>
+      <p><strong>Adresse :</strong> Votre ville / votre adresse</p>
+      <p><strong>Horaires :</strong> Lundi au Samedi - 9h00 à 18h00</p>
+      <br>
+      <a href="mailto:contact@beaute-lash-studio.com" class="btn">Envoyer un message</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Beauté Lash Studio - Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>
